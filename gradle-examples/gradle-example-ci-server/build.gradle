@@ -29,6 +29,17 @@ allprojects {
   status = 'integration'
 }
 
+configure(install.repositories.mavenInstaller) {
+  pom.project {
+    licenses {
+      license {
+        name 'The Apache License, Version 2.0'
+        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+        }
+      }
+   }
+}
+
 // Setting this property to true will make the artifactoryPublish task
 // skip this module (in our case, the root module):
 artifactoryPublish.skip = true
